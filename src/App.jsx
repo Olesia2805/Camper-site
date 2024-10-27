@@ -4,8 +4,6 @@ import { lazy, Suspense } from 'react';
 
 import Loader from './components/Loader/Loader';
 import Navigation from './components/Navigation/Navigation';
-import Section from './components/Section/Section';
-import Container from './components/Container/Container';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const CatalogPage = lazy(() => import('./pages/CatalogPage/CatalogPage'));
@@ -25,21 +23,17 @@ const App = () => {
     <>
       <Toaster position="top-right" />
       <Navigation />
-      <Container>
-        <Section>
-          <Suspense fallback={<Loader />}>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/catalog" element={<CatalogPage />} />
-              <Route path="/catalog/:id" element={<CatalogDetailsPage />}>
-                <Route path="feature" element={<CatalogFeature />} />
-                <Route path="reviews" element={<CatalogReviews />} />
-              </Route>
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </Suspense>
-        </Section>
-      </Container>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/catalog/:id" element={<CatalogDetailsPage />}>
+            <Route path="feature" element={<CatalogFeature />} />
+            <Route path="reviews" element={<CatalogReviews />} />
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
     </>
   );
 };

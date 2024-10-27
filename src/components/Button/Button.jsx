@@ -1,7 +1,17 @@
 import btnCss from './Button.module.css';
+import clsx from 'clsx';
 
-const Button = () => {
-  return <div className={btnCss.btn}></div>;
+const Button = ({ children, className }) => {
+  const btnClassName = clsx(className, {
+    // [btnCss.example]: className === 'example',
+    [btnCss.home]: className === 'home',
+    [btnCss.btn]: true,
+  });
+  return (
+    <button className={btnClassName} type="submit">
+      {children}
+    </button>
+  );
 };
 
 export default Button;

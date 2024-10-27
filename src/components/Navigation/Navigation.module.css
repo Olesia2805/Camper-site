@@ -1,20 +1,26 @@
 .nav {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  padding: 18px 0;
+  background-color: var(--inputs);
+}
+
+@media only screen and (min-width: 768px) {
+  .nav {
     padding: 24px 0;
-    background-color: var(--inputs);
+  }
 }
 
 .link {
-    color: var(--main);
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+  color: var(--main);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
 .link:hover {
-    color: var(--button);
+  color: var(--button);
 }
 
 .isActive {
-    color: var(--button-hover);
+  color: var(--button-hover);
 }
