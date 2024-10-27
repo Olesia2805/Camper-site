@@ -1,7 +1,7 @@
 .home {
   height: calc(100vh - 60px);
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)),
-    url('../../img/homePicture@2x.webp');
+    url('../../img/homePicture@1x.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,14 +20,14 @@
     justify-content: center;
     text-align: left;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
-      url('../../img/homePicture@1x.webp');
+      url('../../img/homePicture@2x.webp');
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      url('../../img/homePicture@1x.webp');
+      url('../../img/homePicture@2x.webp');
   }
 }
 
