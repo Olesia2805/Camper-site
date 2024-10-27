@@ -1,0 +1,13 @@
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.cardWrapper {
+    position: relative;
+    width: 350px;
+    height: 300px;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
