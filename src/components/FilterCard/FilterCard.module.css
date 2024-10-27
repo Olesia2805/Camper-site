@@ -1,0 +1,32 @@
+.icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 112px;
+  height: 96px;
+  border: 1px solid var(--gray-light);
+  border-radius: 12px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  transition: border 0.5s;
+}
+
+.card:hover,
+.card:focus {
+  border: 1px solid var(--button);
+}
+
+.selected {
+  background-color: var(--button);
+  color: white;
+}

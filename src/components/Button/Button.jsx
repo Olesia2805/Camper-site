@@ -5,6 +5,7 @@ const Button = ({ children, className }) => {
   const btnClassName = clsx(className, {
     // [btnCss.example]: className === 'example',
     [btnCss.home]: className === 'home',
+    [btnCss.search]: className === 'search',
     [btnCss.btn]: true,
   });
   return (

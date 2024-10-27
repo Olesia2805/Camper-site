@@ -1,0 +1,7 @@
+.typeList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+  max-width: 360px;
+}
