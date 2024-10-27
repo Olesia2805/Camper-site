@@ -11,7 +11,7 @@ const HomePage = () => {
         <p className={homeCss.text}>
           You can find everything you want in our catalog
         </p>
-        <Link to="/campers">
+        <Link to="/catalog">
           <Button className="home">View Now</Button>
         </Link>
       </Container>
