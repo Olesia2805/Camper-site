@@ -1,4 +1,4 @@
-import reviewsCss from './MovieReviews.module.css';
+import reviewsCss from './CatalogReviews.module.css';
 import ReviewCard from '../ReviewCard/ReviewCard';
 
 const CatalogReviews = ({ reviews }) => {
