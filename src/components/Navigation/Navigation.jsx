@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import navCss from './Navigation.module.css';
 import clsx from 'clsx';
+import Logo from '../Logo/Logo';
+import Container from '../Container/Container';
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(navCss.link, isActive && navCss.isActive);
@@ -8,14 +10,19 @@ const buildLinkClass = ({ isActive }) => {
 
 const Navigation = () => {
   return (
-    <nav className={navCss.nav}>
-      <NavLink to="/" className={buildLinkClass}>
-        Home
+    <Container className="navContainer">
+      <NavLink to="/">
+        <Logo />
       </NavLink>
-      <NavLink to="/campers" className={buildLinkClass}>
-        Catalog
-      </NavLink>
-    </nav>
+      <nav className={navCss.nav}>
+        <NavLink to="/" className={buildLinkClass}>
+          Home
+        </NavLink>
+        <NavLink to="/campers" className={buildLinkClass}>
+          Catalog
+        </NavLink>
+      </nav>
+    </Container>
   );
 };
 

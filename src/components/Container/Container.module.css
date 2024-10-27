@@ -7,3 +7,10 @@
     padding: 0 64px;
   }
 }
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--inputs);
+}
