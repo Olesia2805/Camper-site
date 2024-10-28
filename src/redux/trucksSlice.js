@@ -5,24 +5,26 @@ const initialState = {
   trucks: [],
   loading: false,
   error: null,
-  currentPage: 0,
-  trucksPerPage: 4,
+  currentOffset: 0,
+  trucksPerBatch: 4,
 };
 
-export const fetchTrucks = createAsyncThunk('trucks/fetchTrucks', async () => {
-  const response = await axios.get(
-    'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers'
-  );
-  console.log(response.data.items);
-  return response.data.items;
-});
+export const fetchTrucks = createAsyncThunk(
+  'trucks/fetchTrucks',
+  async offset => {
+    const response = await axios.get(
+      'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers'
+    );
+    return response.data.items.slice(offset, offset + 4);
+  }
+);
 
 const trucksSlice = createSlice({
   name: 'trucks',
   initialState,
   reducers: {
-    loadMoreTrucks: state => {
-      state.currentPage += 1;
+    incrementOffset: state => {
+      state.currentOffset += state.trucksPerBatch;
     },
   },
   extraReducers: builder => {
@@ -32,7 +34,11 @@ const trucksSlice = createSlice({
       })
       .addCase(fetchTrucks.fulfilled, (state, { payload }) => {
         state.loading = false;
-        state.trucks = payload;
+        const uniqueTrucks = payload.filter(
+          newTruck => !state.trucks.some(truck => truck.id === newTruck.id)
+        );
+
+        state.trucks = [...state.trucks, ...uniqueTrucks];
       })
       .addCase(fetchTrucks.rejected, (state, action) => {
         state.loading = false;
@@ -41,6 +47,6 @@ const trucksSlice = createSlice({
   },
 });
 
-export const { loadMoreTrucks } = trucksSlice.actions;
+export const { incrementOffset } = trucksSlice.actions;
 
 export default trucksSlice.reducer;
