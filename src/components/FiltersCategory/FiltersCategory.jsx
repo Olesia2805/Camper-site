@@ -9,7 +9,6 @@ const FiltersCategory = () => {
       <h3 className={filterCss.name}>Vehicle equipment</h3>
       <svg
         className={filterCss.line}
-        width="360"
         height="2"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +19,6 @@ const FiltersCategory = () => {
       <h3 className={filterCss.name}>Vehicle type</h3>
       <svg
         className={filterCss.line}
-        width="360"
         height="2"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

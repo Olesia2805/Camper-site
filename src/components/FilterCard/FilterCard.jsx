@@ -8,7 +8,7 @@ const FilterCard = ({ label, Icon, isSelected, onClick, isMultipleChoice }) => {
       role={isMultipleChoice ? 'checkbox' : 'radio'}
     >
       <Icon className={cardCss.icon} />
-      <span>{label}</span>
+      <span className={cardCss.text}>{label}</span>
     </div>
   );
 };
