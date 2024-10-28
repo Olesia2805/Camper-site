@@ -19,6 +19,16 @@ export const fetchTrucks = createAsyncThunk(
   }
 );
 
+export const fetchTruckDetails = createAsyncThunk(
+  'trucks/fetchTruckDetails',
+  async id => {
+    const response = await axios.get(
+      `https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers/${id}`
+    );
+    return response.data;
+  }
+);
+
 const trucksSlice = createSlice({
   name: 'trucks',
   initialState,
@@ -45,6 +55,19 @@ const trucksSlice = createSlice({
         state.trucks = [...state.trucks, ...uniqueTrucks];
       })
       .addCase(fetchTrucks.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(fetchTruckDetails.pending, state => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchTruckDetails.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.truck = payload;
+        state.truck.reviewCount = payload.reviews ? payload.reviews.length : 0;
+      })
+      .addCase(fetchTruckDetails.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       });

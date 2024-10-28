@@ -21,12 +21,12 @@ const TruckCard = ({ truck }) => {
           <BsSuitHeart size="24" className={cardCss.heart} />
         </div>
         <p className={cardCss.review}>
+          <FaStar fill="#ffc531" size="16" />{' '}
           <Link
             to={`/catalog/${truck.id}/reviews`}
             className={cardCss.linkReviews}
           >
-            <FaStar fill="#ffc531" size="16" /> {truck.rating} (
-            {truck.reviewCount} Reviews)
+            {truck.rating} ({truck.reviewCount} Reviews)
           </Link>
         </p>
         <p className={cardCss.location}>
