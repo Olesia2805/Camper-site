@@ -6,6 +6,7 @@ const Button = ({ children, className }) => {
     // [btnCss.example]: className === 'example',
     [btnCss.home]: className === 'home',
     [btnCss.search]: className === 'search',
+    [btnCss.picture]: className === 'picture',
     [btnCss.btn]: true,
   });
   return (

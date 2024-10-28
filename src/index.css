@@ -5,6 +5,7 @@ body {
   line-height: 1.5;
   background-color: var(--white);
   color: var(--main);
+  font-weight: 400;
 }
 
 h1,
@@ -18,7 +19,7 @@ p {
 }
 
 ul,
-ol{
+ol {
   margin: 0;
   padding: 0;
   list-style: none;

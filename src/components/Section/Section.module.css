@@ -19,6 +19,8 @@
 @media only screen and (min-width: 768px) {
   .catalog {
     padding-bottom: 40px;
-    display: block;
+    gap: 64px;
+    flex-direction: row;
+    align-items: flex-start;
   }
 }

@@ -1,13 +1,28 @@
-.list{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
+.list {
+  /* margin-bottom: 32px; */
 }
 
 .cardWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 840px;
+  border: 1px solid var(--gray-light);
+  border-radius: 20px;
+}
+
+.cardWrapper:not(:last-child) {
+  margin-bottom: 28px;
+}
+
+@media only screen and (min-width: 768px) {
+  .cardWrapper {
+    padding: 23px;
+    flex-direction: row;
     position: relative;
-    width: 350px;
-    height: 300px;
-    overflow: hidden;
-    transition: transform 0.5s ease;
+  }
+
+  .cardWrapper:not(:last-child) {
+    margin-bottom: 32px;
+  }
 }

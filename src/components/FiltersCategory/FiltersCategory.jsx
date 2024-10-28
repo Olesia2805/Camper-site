@@ -1,6 +1,5 @@
 import VehicleEquipment from '../VehicleEquipment/VehicleEquipment';
 import VehicleType from '../VehicleType/VehicleType';
-import Button from '../Button/Button';
 import filterCss from './FiltersCategory.module.css';
 
 const FiltersCategory = () => {
@@ -26,7 +25,6 @@ const FiltersCategory = () => {
         <path d="M0 1h360" stroke="var(--gray-light)" />
       </svg>
       <VehicleType />
-      <Button className="search">Search</Button>
     </>
   );
 };
