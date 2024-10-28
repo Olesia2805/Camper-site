@@ -4,12 +4,11 @@ import trucksCss from './TrucksList.module.css';
 import TruckCard from '../TruckCard/TruckCard';
 import { fetchTrucks, incrementOffset } from '../../redux/trucksSlice';
 import Loader from '../Loader/Loader';
+import Button from '../Button/Button';
 
 export const TrucksList = () => {
   const dispatch = useDispatch();
-  const { trucks, loading, error, currentOffset } = useSelector(
-    state => state.trucks
-  );
+  const { trucks, loading, currentOffset } = useSelector(state => state.trucks);
 
   useEffect(() => {
     if (trucks.length === 0) {
@@ -37,13 +36,11 @@ export const TrucksList = () => {
         <p className={trucksCss.error}>No trucks available.</p>
       )}
       {trucks.length < 23 && trucks.length !== 0 && !loading && (
-        <button
-          onClick={handleLoadMore}
-          className={trucksCss.loadMore}
-          disabled={loading}
-        >
-          Load More
-        </button>
+        <div className={trucksCss.buttonContainer}>
+          <Button className="loadMore" onClick={handleLoadMore}>
+            Load More
+          </Button>
+        </div>
       )}
     </>
   );

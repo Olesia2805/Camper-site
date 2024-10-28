@@ -68,3 +68,21 @@
     margin-bottom: 0px;
   }
 }
+
+.loadMore {
+  padding: 16px 32px;
+  border: 1px solid var(--gray-light);
+  border-radius: 200px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: var(--main);
+  background-color: transparent;
+}
+
+.loadMore:hover,
+.loadMore:focus {
+  border: 1px solid var(--button-hover);
+  background-color: transparent;
+}

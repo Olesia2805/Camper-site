@@ -21,8 +21,6 @@ const FeatureList = ({ truck }) => {
     { name: 'water', label: 'Water', icon: <IoWaterOutline /> },
   ];
 
-  console.log(truck);
-
   return (
     <div className={featureCss.container}>
       {featureItems.map(feature =>
