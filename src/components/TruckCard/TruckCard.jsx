@@ -3,7 +3,8 @@ import Button from '../Button/Button';
 import { BsSuitHeart } from 'react-icons/bs';
 import { FaStar } from 'react-icons/fa';
 import { BsMap } from 'react-icons/bs';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import FeatureList from '../FeatureList/FeatureList';
 
 const TruckCard = ({ truck }) => {
   return (
@@ -20,16 +21,22 @@ const TruckCard = ({ truck }) => {
           <BsSuitHeart size="24" className={cardCss.heart} />
         </div>
         <p className={cardCss.review}>
-          <FaStar fill="#ffc531" size="16" /> {truck.rating} (2 Reviews)
+          <Link
+            to={`/catalog/${truck.id}/reviews`}
+            className={cardCss.linkReviews}
+          >
+            <FaStar fill="#ffc531" size="16" /> {truck.rating} (
+            {truck.reviewCount} Reviews)
+          </Link>
         </p>
         <p className={cardCss.location}>
           <BsMap size="16" /> {truck.location}
         </p>
         <p className={cardCss.description}>{truck.description}</p>
-        <></>
-        {/* <Link to="/catalog/:id"> */}
-        <Button className="picture">Show more</Button>
-        {/* </Link> */}
+        {truck && <FeatureList truck={truck} />}
+        <Link to={`/catalog/${truck.id}`}>
+          <Button className="picture">Show more</Button>
+        </Link>
       </div>
     </>
   );

@@ -74,6 +74,17 @@
   cursor: pointer;
 }
 
+.linkReviews {
+  color: var(--main);
+  text-decoration: none;
+}
+
+.linkReviews:hover,
+.linkReviews:focus {
+  color: var(--main);
+  text-decoration: underline;
+}
+
 .review,
 .location {
   margin-bottom: 16px;
@@ -117,5 +128,10 @@
   .description {
     -webkit-line-clamp: 1;
     font-size: 16px;
+    margin-bottom: 24px;
   }
+}
+
+.feature {
+  margin-bottom: 10px;
 }

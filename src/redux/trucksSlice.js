@@ -38,6 +38,10 @@ const trucksSlice = createSlice({
           newTruck => !state.trucks.some(truck => truck.id === newTruck.id)
         );
 
+        uniqueTrucks.forEach(truck => {
+          truck.reviewCount = truck.reviews ? truck.reviews.length : 0;
+        });
+
         state.trucks = [...state.trucks, ...uniqueTrucks];
       })
       .addCase(fetchTrucks.rejected, (state, action) => {

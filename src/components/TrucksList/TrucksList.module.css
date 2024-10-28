@@ -9,6 +9,7 @@
   max-width: 840px;
   border: 1px solid var(--gray-light);
   border-radius: 20px;
+  height: auto;
 }
 
 .cardWrapper:not(:last-child) {
@@ -24,5 +25,16 @@
 
   .cardWrapper:not(:last-child) {
     margin-bottom: 32px;
+  }
+}
+
+.error {
+  font-size: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+  .error {
+    font-size: 40px;
+    width: 888px;
   }
 }
