@@ -86,3 +86,9 @@
   border: 1px solid var(--button-hover);
   background-color: transparent;
 }
+
+.submitForm {
+  padding: 16px 60px;
+  font-weight: 600;
+  margin: 0 auto;
+}

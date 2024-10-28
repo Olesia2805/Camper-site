@@ -8,6 +8,7 @@ const Button = ({ children, className, onClick, type = 'submit' }) => {
     [btnCss.search]: className === 'search',
     [btnCss.picture]: className === 'picture',
     [btnCss.loadMore]: className === 'loadMore',
+    [btnCss.submitForm]: className === 'submitForm',
     [btnCss.btn]: true,
   });
   return (

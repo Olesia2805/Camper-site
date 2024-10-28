@@ -1,16 +1,17 @@
-import reviewsCss from './CatalogReviews.module.css';
-import ReviewCard from '../ReviewCard/ReviewCard';
+// import reviewsCss from './CatalogReviews.module.css';
+// import ReviewCard from '../ReviewCard/ReviewCard';
 
-const CatalogReviews = ({ reviews }) => {
+const CatalogReviews = () => {
   return (
     <>
-      <ul className={reviewsCss.list}>
+      <h2>CatalogReviews</h2>
+      {/* <ul className={reviewsCss.list}>
         {reviews.map(review => (
           <li key={review.id} className={reviewsCss.cardWrapper}>
             <ReviewCard />
           </li>
         ))}
-      </ul>
+      </ul> */}
     </>
   );
 };
